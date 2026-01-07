@@ -10,12 +10,6 @@ table = "ticket"
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC select * from osticket.silver.ticket
-# MAGIC where id_status = 3 and created > '2025-12-01';
-
-# COMMAND ----------
-
 df = read_table(read_layer, table)
 df.display()
 

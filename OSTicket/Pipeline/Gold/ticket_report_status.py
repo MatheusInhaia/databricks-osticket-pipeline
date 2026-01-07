@@ -10,7 +10,7 @@ nm_gold = "kpi_ticket"
 
 df = spark.sql("""
     select 
-        (year(created) * 100 + month(created)) AS year_month,
+        (year(created) * 100 + month(created)) as year_month,
         year(to_date(t.created, 'dd/mm/yyyy')) as year,
         month(to_date(t.created, 'dd/mm/yyyy')) as month,
         count(*) as total,

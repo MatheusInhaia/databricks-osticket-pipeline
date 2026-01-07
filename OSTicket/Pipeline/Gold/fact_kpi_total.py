@@ -55,14 +55,4 @@ df_total.display()
 
 # COMMAND ----------
 
-# MAGIC
-# MAGIC %md
-# MAGIC Decisão de uso da mediana e IQR:
-# MAGIC -
-# MAGIC -
-# MAGIC Aqui foi decidio o uso de mediana ao uso de média, como o tempo de resposta em alguns chamados pode alterar de forma muito significativa por n motivos, assim pegaremos um valor central do tempo de resposta. Pra finalizar e dar um contexto mais real do tempo de resposta de cada staff, resolvi usar o método IQR para remover da contagem valores muito descrepantes, mesmo que a mediana já desse uma valor central, removendo esses outliers temos um valor mais acertivo para o nosso contexto.
-# MAGIC
-
-# COMMAND ----------
-
 write_table(df_total, layer, nm_gold_total)
