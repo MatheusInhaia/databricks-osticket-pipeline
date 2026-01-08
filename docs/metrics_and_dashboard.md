@@ -26,12 +26,12 @@ Os dados da camada Gold são consumidos em dashboards interativos, desenvolvidos
 
 Os dashboards permitem análises tanto em nível geral (equipe) quanto em nível individual (por atendente).
 
-![Dashboard](docs/Images/.Inicialjpg)
+![Dashboard](Images/Inicial.jpg)
 
-![Dashboard TechOps Geral](docs/Images/Geral.jpg)
+![Dashboard TechOps Geral](Images/Geral.jpg)
 
-![Dashboard SLA](docs/Images/SLA.jpg)
+![Dashboard SLA](Images/SLA.jpg)
 
-![Dashboard Indicadores](docs/Images/Indicador.jpg)
+![Dashboard Indicadores](Images/Indicador.jpg)
 
 
