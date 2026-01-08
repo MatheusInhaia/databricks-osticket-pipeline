@@ -50,11 +50,25 @@ new_df_bronze.printSchema()
 
 # COMMAND ----------
 
-new_df_bronze = new_df_bronze.withColumn(
-    "closed_time",
-    (
-        F.col("closed").cast("long") - F.coalesce(F.col("created").cast("long"))
-    ) / 60
+new_df_bronze = (
+    new_df_bronze
+    .withColumn(
+        "closed_time",
+        (F.col("closed").cast("long") - F.col("created").cast("long")) / 60
+    )
+    .withColumn(
+        "cat_close_time",
+        F.when(
+            F.col("id_status").isin(3, 4, 5),
+            "Spam (Não contabilizado)"
+        )
+        .when(F.col("closed_time") <= 1440, "Até 1 dia")
+        .when(
+            (F.col("closed_time") > 1440) & (F.col("closed_time") <= 7200),
+            "Até 5 dias"
+        )
+        .otherwise("Mais de 5 dias")
+    )
 )
 
 # COMMAND ----------
