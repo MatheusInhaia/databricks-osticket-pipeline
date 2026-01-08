@@ -79,7 +79,7 @@ A estrutura, métricas, indicadores, visualizações e regras de negócio perman
 
 As métricas da camada Gold foram definidas com foco em análise operacional e acompanhamento de SLA.
 
-➡️ [Clique aqui para ver o detalhamento das métricas e dashboards no Power BI](docs/metricas_e_dashboard.md)
+➡️ [Clique aqui para ver o detalhamento das métricas e dashboards no Power BI](docs/metrics_and_dashboard.md)
 
 
 
