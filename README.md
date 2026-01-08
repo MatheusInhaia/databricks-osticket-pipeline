@@ -9,8 +9,14 @@ seguindo a arquitetura Bronze, Silver e Gold.
 Implementar um pipeline de engenharia de dados utilizando dados dos
 chamados do TechOps, garantindo o processamento e métricas prontas para consumo analítico.
 
-#### 🔐 Observação sobre os Dados
-_Os dados utilizados neste projeto são reais, porém para as visualizações foram anonimizados._
+## 🔎 Sobre o OSTicket
+
+OSTicket é uma ferramenta de Service Desk e gerenciamento de chamados de código aberto.
+
+Neste projeto, o OSTicket foi utilizado como fonte de dados dos tickets de suporte (TechOps), permitindo a construção de métricas,
+acompanhamento de SLA e análises históricas de desempenho.
+
+_Os dados usado do OSTicket neste projeto são: ost_thread_entry.csv, ost_ticket.csv, ost_staff.csv, ost_ticket_cdata.csv, ost_ticket_status.csv_
 
 ## 🏗️ Arquitetura de Dados
 O pipeline segue o padrão:
@@ -41,21 +47,39 @@ A execução é controlada por um notebook orquestrador, que garante a ordem cor
 ```
 
 ## ▶️ Como Executar o Pipeline
-1. Acesse o Databricks Free Edition
-2. Abra o notebook setup e o execute na opção **Run ALL**
-3. Depois certifique-se de estar com os dados brutos na pasta Raw*
-4. Execute o notebook utilizando a opção **Run All**
 
-_*os dados usado do OSTicket neste projeto são: ost_thread_entry.csv, ost_ticket.csv, ost_staff.csv, ost_ticket_cdata.csv, ost_ticket_status.csv_
+### Execução no Databricks
 
-O pipeline será executado na ordem:
-Bronze → Silver → Gold
+Este projeto é desenvolvido e testado utilizando notebooks do Databricks,
+permitindo iteração rápida, validação visual dos dados e depuração durante o desenvolvimento.
 
+Para fins de versionamento e melhor legibilidade no GitHub,
+os notebooks são convertidos para arquivos `.py` (Source File),
+que representam o snapshot do código em seu estado estável.
+
+A execução do pipeline ocorre exclusivamente via notebooks no Databricks.
+
+### Passo a passo
+
+1. Acesse o **Databricks Free Edition**
+2. Abra o notebook `setup` e execute utilizando a opção **Run All** para criar o catalogo e os volumes
+3. Certifique-se de que os dados brutos estejam disponíveis no volume **Raw**
+4. Abra o notebook `orquestrador`
+5. Execute o notebook utilizando a opção **Run All**
+
+O pipeline será executado automaticamente na seguinte ordem:
+
+**Bronze → Silver → Gold**
 ## 📊 Camada Gold e Métricas Analíticas
+🔐 **Confidencialidade dos dados**
+
+Por se tratar de um projeto baseado em dados reais de operações internas de TechOps, todos os valores numéricos sensíveis foram propositalmente ocultados ou anonimizados nos dashboards apresentados neste repositório.
+
+A estrutura, métricas, indicadores, visualizações e regras de negócio permanecem fiéis ao cenário real, sendo o objetivo demonstrar modelagem de indicadores, design de dashboards e análise operacional, e não a exposição de dados confidenciais.****
 
 As métricas da camada Gold foram definidas com foco em análise operacional e acompanhamento de SLA.
 
-➡️ [Clique aqui para ver o detalhamento das métricas e dashboards no Power BI](docs/gold_metrics.md)
+➡️ [Clique aqui para ver o detalhamento das métricas e dashboards no Power BI](docs/metricas_e_dashboard.md)
 
 
 
