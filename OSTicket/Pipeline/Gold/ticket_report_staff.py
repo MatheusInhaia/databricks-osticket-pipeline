@@ -37,3 +37,13 @@ df.display()
 # COMMAND ----------
 
 write_table(df, layer, nm_gold)
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select * from osticket.silver.ticket
+# MAGIC where created >= '2025-11-01' and created < '2025-12-1' and id_staff = 2 and subject = 'Julia mencionou DB'
+
+# COMMAND ----------
+
+
