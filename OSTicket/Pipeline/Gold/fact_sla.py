@@ -1,6 +1,6 @@
 # Databricks notebook source
 spark.sql("""
-            create or replace table osticket.gold.kpi_sla_mensal as
+            create or replace table osticket.gold.fact_sla as
             select
                 year(created)  as year,
                 month(created) as month,
