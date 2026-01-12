@@ -54,7 +54,7 @@ Este projeto é desenvolvido e testado utilizando notebooks do Databricks,
 permitindo iteração rápida, validação visual dos dados e depuração durante o desenvolvimento.
 
 Para fins de versionamento e melhor legibilidade no GitHub,
-os notebooks são convertidos para arquivos `.py` (Source File),
+os notebooks são convertidos para arquivos `.py`,
 que representam o snapshot do código em seu estado estável.
 
 A execução do pipeline ocorre exclusivamente via notebooks no Databricks.
